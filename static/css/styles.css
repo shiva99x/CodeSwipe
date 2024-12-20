@@ -1,0 +1,796 @@
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #010111;
+    color: #333;
+    text-align: center;
+    margin: 20px;
+}
+
+/* Headings */
+h1 {
+    color: #444;
+}
+
+/* Card Styling */
+.card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 300px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Base Button Styles */
+button {
+    margin: 10px;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #f4c842, #d4a437);
+    /* Gradient background */
+    color: black;
+    /* Text color */
+    box-shadow: 0 4px 8px rgba(33, 150, 243, 0.2);
+    /* Subtle shadow */
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease,
+        color 0.3s ease;
+    position: relative;
+    /* For interactive effects */
+    overflow: hidden;
+    /* To handle animations cleanly */
+}
+
+/* Shine Effect (Using ::before pseudo-element) */
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.4);
+    transform: skewX(-25deg);
+    transition: left 0.5s ease;
+}
+
+/* Hover Effect for Shine */
+button:hover::before {
+    left: 125%;
+}
+
+/* Hover Effect for Button */
+button:hover {
+    background: linear-gradient(45deg, #f4c842, #d4a437);
+    box-shadow: 0 6px 15px rgba(33, 150, 243, 0.4);
+    transform: translateY(-3px);
+}
+
+/* Focus Effect (for Accessibility) */
+button:focus {
+    outline: none;
+    box-shadow: 0 0 5px 2px rgba(33, 150, 243, 0.6);
+}
+
+/* Active State (Pressed) */
+button:active {
+    transform: scale(0.98);
+    box-shadow: 0 3px 6px rgba(33, 150, 243, 0.2);
+}
+
+
+/* Left Swipe Button (Red) */
+.btn-left {
+    background: linear-gradient(45deg, #ff6b6b, #ff4c4c);
+    color: white;
+    box-shadow: 0 4px 8px rgba(255, 107, 107, 0.2);
+}
+
+.btn-left:hover {
+    background: linear-gradient(45deg, #ff4c4c, #ff6b6b);
+    box-shadow: 0 6px 12px rgba(255, 107, 107, 0.3);
+    transform: translateY(-5px);
+}
+
+/* Right Swipe Button (Green) */
+.btn-right {
+    background: linear-gradient(45deg, #f4c842, #d4a437);
+    color: black;
+    box-shadow: 0 4px 8px rgba(76, 175, 80, 0.2);
+}
+
+.btn-right:hover {
+    background: linear-gradient(45deg, #f4c842, #d4a437);
+    box-shadow: 0 6px 12px rgba(76, 175, 80, 0.3);
+    transform: translateY(-5px);
+}
+
+/* New Blue Button */
+.btn-blue {
+    background: linear-gradient(45deg, #2196f3, #1976d2);
+    color: black;
+    box-shadow: 0 4px 8px rgba(33, 150, 243, 0.2);
+}
+
+.btn-blue:hover {
+    background: linear-gradient(45deg, #1976d2, #2196f3);
+    box-shadow: 0 6px 12px rgba(33, 150, 243, 0.3);
+    transform: translateY(-5px);
+}
+
+/* Go Back to Home Button (Enhanced Interactivity) */
+.btn-home {
+    background: linear-gradient(45deg, #f4c842, #d4a437);
+    color: black;
+    box-shadow: 0 4px 8px rgba(33, 150, 243, 0.2);
+    padding: 15px 25px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    /* Ensure link text is styled properly */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Shine Effect for Button */
+.btn-home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.4);
+    transform: skewX(-25deg);
+    transition: left 0.5s ease;
+}
+
+/* Hover Effect for Shine */
+.btn-home:hover::before {
+    left: 125%;
+}
+
+/* Hover Effect for Button */
+.btn-home:hover {
+    background: linear-gradient(45deg, #f4c842, #d4a437);
+    box-shadow: 0 6px 15px rgba(33, 150, 243, 0.4);
+    transform: translateY(-3px);
+}
+
+.btn-home:focus {
+    outline: none;
+    box-shadow: 0 0 5px 2px rgba(33, 150, 243, 0.6);
+}
+
+/* Active State */
+.btn-home:active {
+    transform: translateY(1px);
+    box-shadow: 0 3px 6px rgba(33, 150, 243, 0.2);
+}
+
+/* Beautiful Boxes for Connections Page */
+.connection-box {
+    border-radius: 12px;
+    background: linear-gradient(135deg, #ffffff, #f0f0f0);
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.connection-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.connection-box-header {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.connection-box-content {
+    font-size: 16px;
+    color: #555;
+}
+
+/* List Styling */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+li:hover {
+    background-color: #e9e9e9;
+    transform: translateX(5px);
+}
+
+li:active {
+    transform: translateX(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card {
+        width: 90%;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+    }
+}
+
+/* New Challenge Button */
+/* Common Button Styling */
+button {
+    margin: 10px;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #f4c842, #d4a437);
+    /* Gradient background */
+    color: black;
+    /* Text color */
+    box-shadow: 0 4px 8px rgba(33, 150, 243, 0.2);
+    /* Subtle shadow */
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease,
+        color 0.3s ease;
+    position: relative;
+    /* For interactive effects */
+    overflow: hidden;
+    /* To handle animations cleanly */
+}
+
+/* Hover Effect for Button */
+button:hover {
+    background: linear-gradient(45deg, #f4c842, #d4a437);
+    box-shadow: 0 6px 12px rgba(33, 150, 243, 0.3);
+    transform: translateY(-3px);
+}
+
+
+.btn-challenges:hover {
+    background: linear-gradient(45deg, #f4c842, #d4a437);
+    box-shadow: 0 6px 12px rgba(76, 175, 80, 0.3);
+    transform: translateY(-5px);
+}
+
+/* Challenge List Styling */
+.challenge-container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f4f4f9;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.challenge-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.challenge-container li {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.btn-challenges:hover {
+    background-color: #444;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Challenge List Styling */
+.challenge-container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f4f4f9;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.challenge-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.challenge-container li {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background: url('decorative-elegant-background-black-gold_1048-9273.avif') no-repeat center center fixed;
+    background-size: cover;
+    color: #f4c842;
+    /* Gold color */
+    text-align: center;
+    margin: 20px;
+}
+
+/* Headings */
+h1 {
+    color: #f5d76e;
+    /* Softer gold */
+    text-shadow: 1px 1px 4px #000;
+    /* Subtle shadow for visibility */
+}
+
+/* Card Styling */
+.card {
+    border: 1px solid #2e2e2e;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Semi-transparent black */
+    color: #f4c842;
+    /* Gold text */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 1);
+}
+
+/* Base Button Styles */
+button {
+    margin: 10px;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #f4c842, #d4a437);
+    /* Gold gradient */
+    color: black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+button:hover {
+    background: linear-gradient(45deg, #d4a437, #f4c842);
+    /* Reverse gradient */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+    transform: translateY(-3px);
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 5px 2px #f4c842;
+}
+
+/* Active State (Pressed) */
+button:active {
+    transform: scale(0.98);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Specific Button Variants */
+.btn-left,
+.btn-right,
+.btn-blue,
+.btn-home,
+.btn-challenges {
+    background: linear-gradient(45deg, #f4c842, #d4a437);
+    color: black;
+}
+
+.btn-left:hover,
+.btn-right:hover,
+.btn-blue:hover,
+.btn-home:hover,
+.btn-challenges:hover {
+    background: linear-gradient(45deg, #d4a437, #f4c842);
+    transform: translateY(-3px);
+}
+
+/* Connection Box */
+.connection-box {
+    background: rgba(0, 0, 0, 0.8);
+    color: #f4c842;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 1);
+}
+
+.connection-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 1);
+}
+
+/* List Styling */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #f5d76e;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+li:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: translateX(5px);
+}
+
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    /* Pitch black */
+    color: #f4c842;
+    /* Gold color */
+    text-align: center;
+    margin: 20px;
+}
+
+/* Headings */
+h1 {
+    color: #f5d76e;
+    /* Softer gold */
+    text-shadow: 1px 1px 4px #333;
+    /* Subtle shadow for visibility */
+}
+
+/* Challenge Container Styling */
+.challenge-container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: rgba(20, 20, 20, 0.9);
+    /* Slight transparency for texture */
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.8);
+    color: #f5d76e;
+}
+
+.challenge-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Single Challenge Item Styling */
+.challenge-container li {
+    margin: 20px 0;
+    padding: 20px;
+    font-size: 18px;
+    background-color: #111;
+    /* Dark background for the challenge item */
+    border: 1px solid #555;
+    border-radius: 8px;
+    color: #f4c842;
+    /* Gold color */
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.challenge-container li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.8);
+}
+
+/* Buttons and Card Styling */
+.card,
+button {
+    /* Reuse styles for visual harmony */
+    background: linear-gradient(45deg, #f4c842, #d4a437);
+    color: black;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    /* Pitch black background */
+    color: #fff;
+    /* White text */
+    display: flex;
+    flex-direction: column;
+    /* Stack elements */
+    justify-content: center;
+    /* Center vertically */
+    align-items: center;
+    /* Align horizontally */
+    min-height: 100vh;
+    /* Full viewport height */
+    margin: 0;
+    text-align: center;
+}
+
+/* Container Styling */
+.container {
+    width: 100%;
+    max-width: 800px;
+}
+
+/* Challenge Container Styling */
+.challenge-container {
+    background-color: #222;
+    /* Slightly lighter black */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+/* Textarea Styling */
+textarea {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #333;
+    color: #fff;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Buttons Styling (Default) */
+button {
+    margin: 10px;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+/* Specific Button Colors */
+.btn-challenges {
+    background: linear-gradient(45deg, #f4c842, #d4a437);
+    /* Green */
+    color: white;
+    box-shadow: 0 4px 8px rgba(76, 175, 80, 0.2);
+}
+
+.btn-challenges:hover {
+    background: linear-gradient(45deg, #f4c842, #d4a437);
+    box-shadow: 0 6px 12px rgba(76, 175, 80, 0.3);
+    transform: translateY(-5px);
+}
+
+.btn-home {
+    background: linear-gradient(45deg, #f4c842, #d4a437);
+    text-decoration: none;
+    display: inline-block;
+    padding: 15px 25px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    box-shadow: 0 4px 8px rgba(33, 150, 243, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.btn-home:hover {
+    background: linear-gradient(45deg, #f4c842, #d4a437);
+    box-shadow: 0 6px 15px rgba(33, 150, 243, 0.4);
+    transform: translateY(-3px);
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 768px) {
+    textarea {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 16px;
+    }
+}
+
+.btn-challenges {
+    background: linear-gradient(45deg, #f4c842, #d4a437);
+    color: black;
+    box-shadow: 0 4px 8px rgba(76, 175, 80, 0.2);
+}
+
+/* Connection Container */
+.connection-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* Even spacing between cards */
+    align-items: stretch;
+    /* Ensure cards align nicely */
+    gap: 20px;
+    /* Space between cards */
+    padding: 20px;
+}
+
+/* Individual Connection Card */
+.connection-card {
+    background-color: #222;
+    /* Slightly lighter black */
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    width: calc(33% - 40px);
+    /* Adjust width to allow for spacing */
+    min-width: 250px;
+    /* Ensure a minimum width for smaller screens */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect for Cards */
+.connection-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+}
+
+/* For Small Screens */
+@media (max-width: 768px) {
+    .connection-card {
+        width: calc(50% - 20px);
+        /* Adjust width for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .connection-card {
+        width: 100%;
+        /* Full width for very small screens */
+    }
+}
+
+/* Enhanced Search Bar */
+.search-bar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    gap: 10px;
+    /* Spacing between the search bar and button */
+}
+
+.search-bar {
+    padding: 15px 20px;
+    font-size: 18px;
+    width: 50%;
+    max-width: 600px;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    background-color: #555;
+    /* Gray background */
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-bar::placeholder {
+    color: #ddd;
+    /* Light gray placeholder text */
+}
+
+.search-bar:focus {
+    background-color: #444;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.search-button {
+    padding: 15px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(45deg, #f4c842, #d4a437);
+    color: black;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(76, 175, 80, 0.2);
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-button:hover {
+    background: linear-gradient(45deg, #f4c842, #d4a437);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(76, 175, 80, 0.4);
+}
+
+.search-button:focus {
+    outline: none;
+    box-shadow: 0 0 5px 2px rgba(76, 175, 80, 0.5);
+}
+
+.search-button:active {
+    transform: scale(0.98);
+}
+
+/* Profile Button Styling */
+.btn-profile {
+    margin: 10px;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #f4c842, #d4a437);
+    /* Green gradient */
+    color: black;
+    text-decoration: none;
+    /* Remove underline for links */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    display: inline-block;
+    /* Ensure button-like behavior for links */
+}
+
+.btn-profile:hover {
+    background: linear-gradient(45deg, #f4c842, #d4a437);
+    /* Reverse gradient */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+    transform: translateY(-3px);
+}
+
+.btn-profile:focus {
+    outline: none;
+    box-shadow: 0 4px 6px rgba(76, 175, 80, 0.2);
+    /* Light green glow */
+}
+
+.btn-profile:active {
+    transform: scale(0.98);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+}

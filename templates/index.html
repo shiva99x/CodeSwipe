@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome to the CodeSwipe</h1>
+        <a href="{{ url_for('profile', user_id=1) }}" class="btn-profile">Profile</a>
+        <a href="/swipe/1"><button>Start Swiping</button></a>
+        <a href="/challenges"><button class="btn-challenges">Challenge</button></a>
+    </div>
+</body>
+
+</html>

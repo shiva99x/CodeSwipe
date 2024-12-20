@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connections</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <div class="main-container">
+        <h1>Your Connections</h1>
+        <!-- Search Bar -->
+        <div class="search-container">
+            <div class="search-bar-container">
+                <input type="text" class="search-bar" placeholder="Search for connections...">
+                <button class="search-button">Search</button>
+            </div>
+        </div>
+        <!-- Connections Section -->
+        {% if matches %}
+        <div class="connection-container">
+            {% for match in matches %}
+            <div class="connection-card">
+                <h2>{{ match.name }}</h2>
+                <p><strong>Tech Stack:</strong> {{ match.tech_stack }}</p>
+                <p><strong>Project:</strong> {{ match.project }}</p>
+                <p><strong>Score:</strong> {{ match.points }}</p>
+                <a href="{{ url_for('profile', user_id=match.id) }}" class="btn-profile">View Profile</a>
+                <!-- Use match.id -->
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p>No matches found. Try adjusting your search!</p>
+        {% endif %}
+        <a href="{{ url_for('index') }}" class="btn-home">Go Back to Home</a>
+    </div>
+</body>
+
+</html>

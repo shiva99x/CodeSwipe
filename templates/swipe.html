@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swipe</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <h1>Find Your Match!</h1>
+    <div class="card">
+        <h2>{{ user.name }}</h2>
+        <p><strong>Tech Stack:</strong> {{ user.tech_stack }}</p>
+        <p><strong>Project:</strong> {{ user.project }}</p>
+    </div>
+    <form method="POST">
+        <button type="submit" name="action" value="left" class="btn-left">Left Swipe</button>
+        <button type="submit" name="action" value="right" class="btn-right">Right Swipe</button>
+    </form>
+</body>
+
+</html>
